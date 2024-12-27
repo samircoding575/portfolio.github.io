@@ -5,26 +5,30 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    overflow-x: hidden;
 }
 
-/* Header Styles */
+/* Header */
 header {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
     color: white;
-    padding: 20px 0;
     text-align: center;
+    padding: 60px 0;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 header p {
     font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-in-out;
 }
 
-/* Section Styles */
+/* Sections */
 section {
     padding: 40px 20px;
 }
@@ -36,31 +40,23 @@ section {
 }
 
 /* About Section */
-#about {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#about h2 {
+#about h2, #projects h2, #contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#about p, .skills-list {
+    animation: slideIn 1.2s ease-in-out;
+}
+
+.skills-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
 /* Projects Section */
-#projects {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#projects h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
 .project-container {
     display: flex;
     flex-wrap: wrap;
@@ -68,12 +64,18 @@ section {
 }
 
 .project {
-    background: #f9f9f9;
-    border-radius: 10px;
+    background: white;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project h3 {
@@ -84,8 +86,8 @@ section {
     margin: 10px 0;
 }
 
+/* Buttons */
 .btn {
-    display: inline-block;
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
@@ -100,19 +102,13 @@ section {
     transform: scale(1.05);
 }
 
-/* Contact Section */
-#contact {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Footer Styles */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
